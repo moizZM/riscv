@@ -10,6 +10,17 @@ cd ~/riscv-vm
 ```` 
 
 
+````bash
+
+
+python3 hp-vm.py
+
+```` 
+
+
+
+
+
 # before starting qemu 
 
 
