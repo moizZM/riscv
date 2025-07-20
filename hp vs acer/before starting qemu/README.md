@@ -1,3 +1,15 @@
+# now just run 
+
+````bash
+
+
+cd ~/riscv-vm
+./start-qemu.sh
+
+
+```` 
+
+
 # before starting qemu 
 
 
