@@ -18,7 +18,7 @@ sudo iptables -t nat -A POSTROUTING -p udp -d 192.168.100.10 --dport 12345 -j MA
 sudo ip addr add 192.168.100.1/24 dev tap0
 ````
 
-
+````py
 sudo qemu-system-riscv64 \
   -machine virt -nographic -m 2048 -smp 2 \
   -kernel /usr/lib/u-boot/qemu-riscv64_smode/uboot.elf \
@@ -26,8 +26,13 @@ sudo qemu-system-riscv64 \
   -drive file=ubuntu-24.04.2-preinstalled-server-riscv64.img,if=virtio,format=raw \
   -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
   -device virtio-net-device,netdev=net0
+````
 
+````py
+python3 hp-vm.py
+````
 
+````py
 sudo qemu-system-riscv64 \
   -nographic \
   -machine virt \
@@ -37,15 +42,15 @@ sudo qemu-system-riscv64 \
   -device virtio-net-device,netdev=net0 \
   -netdev tap,id=net0,ifname=tap0,script=no,downscript=no \
   -drive file=ubuntu-riscv.qcow2,format=qcow2
+````
 
 
 
-python3 hp-vm.py
 
-
+````py
 sudo ip addr add 192.168.100.1/24 dev tap0
+````
 
-
-
+````py
 ip a show tap0
-
+````
